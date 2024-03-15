@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:#E5CEE1;
+}
+
+.btn-outline-dark:hover {
+    background-color: #221D4F !important;
+    border-color: #221D4F !important;
+    box-shadow: none !important;
+}
+
+.btn-outline-dark:active {
+    background-color: #221D4F !important;
+    border-color: #221D4F !important;
+    box-shadow: none !important;
+}
+
+.btn-outline-dark:focus {
+    background-color: #221D4F !important;
+    color: white !important;
+    box-shadow: none !important;
+}
