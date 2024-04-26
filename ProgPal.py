@@ -56,9 +56,9 @@ class ButtonView(discord.ui.View):
         current_question = self.questions[self.index - 1]
         correct_answers = current_question.correct_answers
 
-        if key in correct_answers:
+        if key in current_question.answers:
             # Check if the correct answer is marked as 'true'
-            if correct_answers[key].lower() == "true":
+            if correct_answers.get(key, "").lower() == "true":
                 # Award a point for a correct answer
                 self.user_score += 1
                 self.user_response.append(1)
