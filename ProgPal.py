@@ -39,7 +39,6 @@ class ButtonView(discord.ui.View):
         super().__init__()
         self.questions = questions
         self.index = 0
-        self.user_score = 0
         self.user_response = []
 
     async def button_callback(self, interaction: discord.Interaction):
@@ -60,7 +59,6 @@ class ButtonView(discord.ui.View):
             # Check if the correct answer is marked as 'true'
             if correct_answers.get(key, "").lower() == "true":
                 # Award a point for a correct answer
-                self.user_score += 1
                 self.user_response.append(1)
                 await interaction.followup.send(content=f"Correct! The answer was: {current_question.answers[key]}.")
             else:
@@ -100,7 +98,7 @@ class ButtonView(discord.ui.View):
 
     async def end_quiz(self, interaction):
         total_questions = len(self.questions)
-        correct_answers = self.user_score
+        correct_answers = sum(self.user_response)
         wrong_answers = total_questions - correct_answers
         score_percentage = (correct_answers / total_questions) * 100
 
