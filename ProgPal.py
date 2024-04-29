@@ -74,13 +74,13 @@ class ButtonView(discord.ui.View):
         question = self.questions[self.index]
 
         em = discord.Embed(
-            title="Quiz", description=f"Question {self.index + 1}", color=discord.Color.blue()
+            title="Quiz", description=f"Question {self.index + 1}:", color=discord.Color.blue()
         )
-        em.add_field(name="Question", value=question.question, inline=False)
+        em.add_field(name="", value=question.question, inline=False)
         em.add_field(
             name="Options",
             value="\n".join(
-                [f"{key.upper()}: {value}" for key, value in question.answers.items()]
+                [f"{key.upper()}: {value}" for key, value in question.answers.items() if value]
             ),
             inline=False,
         )
