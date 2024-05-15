@@ -14,6 +14,7 @@ Players can participate in quizzes based on specific categories and difficulties
 - Python 3.6+
 - discord.py library (`pip install discord.py`)
 - requests library (`pip install requests`)
+- python-dotenv library (`pip install python-dotenv`)
 
 ## Usage
 ### Commands:
